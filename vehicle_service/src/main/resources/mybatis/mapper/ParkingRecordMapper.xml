@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.mapper.ParkingRecordMapper">
+  <resultMap id="BaseResultMap" type="com.vehicle.model.entity.ParkingRecord">
+    <result column="park_id" jdbcType="INTEGER" property="park_id" />
+    <result column="car_no" jdbcType="VARCHAR" property="car_no" />
+    <result column="in_time" jdbcType="TIMESTAMP" property="in_time" />
+    <result column="out_time" jdbcType="TIMESTAMP" property="out_time" />
+  </resultMap>
+  <insert id="insert" parameterType="com.vehicle.model.entity.ParkingRecord">
+    insert into parking_record (park_id, car_no, in_time, 
+      out_time)
+    values (#{park_id,jdbcType=INTEGER}, #{car_no,jdbcType=VARCHAR}, #{in_time,jdbcType=TIMESTAMP}, 
+      #{out_time,jdbcType=TIMESTAMP})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select park_id, car_no, in_time, out_time
+    from parking_record
+  </select>
+</mapper>

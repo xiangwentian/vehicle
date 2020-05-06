@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.mapper.ParkMapper">
+  <resultMap id="BaseResultMap" type="com.vehicle.model.entity.Park">
+    <id column="parkid" jdbcType="INTEGER" property="parkid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from park
+    where parkid = #{parkid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vehicle.model.entity.Park">
+    insert into park (parkid, `name`, address
+      )
+    values (#{parkid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.vehicle.model.entity.Park">
+    update park
+    set `name` = #{name,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR}
+    where parkid = #{parkid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select parkid, `name`, address
+    from park
+    where parkid = #{parkid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select parkid, `name`, address
+    from park
+  </select>
+</mapper>
