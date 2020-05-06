@@ -24,6 +24,10 @@ parking_record.sql停车记录表
 注：parking_record表针对car_no车牌（只对车牌汉字如：冀B851LP的"冀"做hash处理）做了表的分片操作，使用shardingjdbc实现分表操作。  
 如果想实现分库也是可以的，代码有实现，只需要把/vehicle_service/src/main/java/com/vehicle/DataSourceConfig.java 74行放开，数据配置好就ok的  
 
+## 配置说明  
+数据库放到了我本地的centos虚拟机中了，地址是192.168.118.130，在自己本地跑时，需要换成自己的数据库地址  
+
+
 ## TODO  
 初步搭建，功能有待完善。。。敬请期待
 
