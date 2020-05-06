@@ -12,18 +12,15 @@ import com.vehicle.model.entity.ParkingRecord;
 import com.vehicle.service.ParkingService;
 import com.vehicle.utils.Result;
 
-//@Controller
 @RestController
 public class VehicleController {
 
 	// @Autowired默认按类型装配（这个注解是属业spring的）
 	// @Resource 是JDK1.6支持的注解，默认按照名称进行装配
-	// @Autowired
 	@Resource(name = "parkingService")
 	ParkingService parkingService;
 
 	@RequestMapping("/hi")
-	//@ResponseBody
 	public String home(@RequestParam String name) {
 		return parkingService.hiService(name);
 	}
@@ -47,7 +44,6 @@ public class VehicleController {
 	// }
 	//
 	@RequestMapping("/in2")
-	//@ResponseBody
 	public Result parkingIn2(@RequestParam(value = "carNo") String car_no,
 			@RequestParam(value = "parkId") int park_id) {
 		ParkingRecord record = new ParkingRecord();

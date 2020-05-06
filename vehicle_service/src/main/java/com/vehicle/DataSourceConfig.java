@@ -31,7 +31,7 @@ import com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrateg
 import com.vehicle.config.strategy.ModuloTableShardingAlgorithm;
 
 /**
- * 数据源及分表配置 Created by Kane on 2018/1/17.
+ * 数据源及分表配置 
  */
 @Configuration
 @MapperScan(basePackages = "com.vehicle.mapper", sqlSessionTemplateRef = "test1SqlSessionTemplate")

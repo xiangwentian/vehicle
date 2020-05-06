@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 
 /**
- * 分表策略的基本实现 Created by Kane on 2018/1/22.
+ * 分表策略的基本实现
  */
 public class ModuloTableShardingAlgorithm implements SingleKeyTableShardingAlgorithm<String> {
 
